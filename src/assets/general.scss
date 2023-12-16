@@ -1,3 +1,8 @@
 /**************************
 GENERAL SCSS
 ***************************/
+@use '../assets/partials/common';
+@use '../assets/partials/reset';
+@use '../assets/partials/typography';
+@use '../assets/partials/utilities';
+@use '../assets/partials/variables';
