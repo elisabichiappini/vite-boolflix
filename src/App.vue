@@ -18,28 +18,33 @@ export default {
         };
     },
     methods: {
-        callApiMovies() {
-            axios
-            .get(this.store.apiUrlMovie + this.store.apiUrlSeriesTv,
-            {
+        callApiTmdb() {
+            const movie = axios.get(this.store.apiUrlMovie,
+                {
                 params: {
                     query: this.store.searchKey,
                 }}
             )
+            const serieTv = axios.get(this.store.apiUrlSeriesTv,
+                {
+                params: {
+                    query: this.store.searchKey,
+                }
+            })
             .then((data) => {
-            this.store.movies = data.data.results;
-            this.store.series = data.data.results;
+                this.store.movies = data.data.results;
+                this.store.series = data.data.results;
             })
         },
     },
     created() {
-        this.callApiMovies();
+        this.callApiTmdb();
     }
 };
 </script>
 
 <template>
-    <AppHeader @pippo="callApiMovies"></AppHeader>
+    <AppHeader @pippo="callApiTmdb"></AppHeader>
     <AppMain></AppMain>
     <AppFooter></AppFooter>
 </template>

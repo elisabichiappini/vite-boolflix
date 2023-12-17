@@ -3,16 +3,16 @@ import { reactive } from "vue";
 //esportazione dell'oggetto creato per la comunicazione globale 
 export const store = reactive ({
     //api ricerca movies
-    apiUrlMovie: 'https://api.themoviedb.org/3/search/movie?api_key=607624ff950bb1869c240ced7f245851&lang=it_IT&query=',
+    apiUrlMovie: 'https://api.themoviedb.org/3/search/movie?api_key=607624ff950bb1869c240ced7f245851&lang=it_IT&',
     //dati inseriti nella search
     searchKey: '',
     //api ricerca tv
-    apiUrlSeriesTv: 'https://api.themoviedb.org/3/search/tv/api_key=607624ff950bb1869c240ced7f245851&lang=it_IT&query=',
+    apiUrlSeriesTv: 'https://api.themoviedb.org/3/search/tv?api_key=607624ff950bb1869c240ced7f245851&lang=it_IT&',
     //array di movies restituiti dopo la ricerca
     movies:[],
     //array di seriesTv restituiti dopo la ricerca
     series:[],
     //api da implementare per la restituzione delle immagini di movies e seriesTv
-    apiPoster:'https://image.tmdb.org/t/p/w342',
+    apiPoster:'https://image.tmdb.org/t/p/w342/',
     loanding: true,
 });

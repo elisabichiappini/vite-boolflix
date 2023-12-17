@@ -4,7 +4,6 @@ import ListMovies from './ListMovies.vue';
 export default {
     name: 'Main',
     components: {
-
         ListMovies,
     },
 };

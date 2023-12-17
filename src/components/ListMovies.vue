@@ -22,17 +22,17 @@ export default {
             :originalTitle="movie.original_title" 
             :originalLanguage="movie.original_language" 
             :vote="movie.vote_average"
-            :image="movie.backdrop_path">
+            :image="movie.poster_path">
         </Movie>
     </ul>
     <ul class="listSeries">
         <Movie 
             v-for="serie in store.series" 
-            :title="serie.title" 
-            :originalTitle="serie.original_title" 
+            :title="serie.name" 
+            :originalTitle="serie.original_name" 
             :originalLanguage="serie.original_language" 
             :vote="serie.vote_average"
-            :image="serie.backdrop_path">
+            :image="serie.poster_path">
         </Movie>
     </ul>
 </template>
