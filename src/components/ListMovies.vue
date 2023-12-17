@@ -21,7 +21,8 @@ export default {
             :title="movie.title" 
             :originalTitle="movie.original_title" 
             :originalLanguage="movie.original_language" 
-            :vote="movie.vote_average">
+            :vote="movie.vote_average"
+            :image="movie.backdrop_path">
         </Movie>
     </ul>
     <ul class="listSeries">
@@ -30,7 +31,8 @@ export default {
             :title="serie.title" 
             :originalTitle="serie.original_title" 
             :originalLanguage="serie.original_language" 
-            :vote="serie.vote_average">
+            :vote="serie.vote_average"
+            :image="serie.backdrop_path">
         </Movie>
     </ul>
 </template>

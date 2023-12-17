@@ -6,6 +6,7 @@ export default {
         originalTitle: String,
         originalLanguage: String,
         vote: Number,
+        image: String,
       },
 }
 </script>
@@ -20,6 +21,7 @@ export default {
                 <img src="../assets/img/en.png" alt=""></h3>
             <h3 v-else >{{ originalLanguage }}</h3>
             <h3>{{ vote }}</h3>
+            <img :src="image" :alt="title">
     </li>
 </template>
 

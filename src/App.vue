@@ -24,8 +24,8 @@ export default {
             {
                 params: {
                     query: this.store.searchKey,
-                }
-            })
+                }}
+            )
             .then((data) => {
             this.store.movies = data.data.results;
             this.store.series = data.data.results;

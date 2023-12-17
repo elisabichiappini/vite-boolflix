@@ -13,6 +13,6 @@ export const store = reactive ({
     //array di seriesTv restituiti dopo la ricerca
     series:[],
     //api da implementare per la restituzione delle immagini di movies e seriesTv
-    apiPoster:'image.tmdb.org/t/p/',
+    apiPoster:'https://image.tmdb.org/t/p/w342',
     loanding: true,
 });
