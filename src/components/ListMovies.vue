@@ -15,7 +15,7 @@ export default {
 </script>
 
 <template>
-    <ul class="listMovies">
+    <ul v-if="store.movies >= 1" class="listMovies">
         <Movie 
             v-for="movie in store.movies" 
             :title="movie.title" 
@@ -25,7 +25,7 @@ export default {
             :image="movie.poster_path">
         </Movie>
     </ul>
-    <ul class="listSeries">
+    <ul v-else class="listSeries">
         <Movie 
             v-for="serie in store.series" 
             :title="serie.name" 
