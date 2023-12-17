@@ -28,7 +28,8 @@ export default {
             <img src="../assets/img/en.png" alt="">
         </h3>
         <h3 v-else >{{ originalLanguage }}</h3>
-        <h3>{{ vote }}</h3>
+        <h3 v-if="vote >= 1">{{ vote }}</h3>
+        <h3 v-else>0</h3>
         <img v-if="image !== null" :src="`${this.store.apiPoster}${image}`" :alt="title">
         <span v-else>immagine non trovata</span>
     </li>

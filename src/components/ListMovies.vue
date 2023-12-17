@@ -31,7 +31,7 @@ export default {
             :title="serie.name" 
             :originalTitle="serie.original_name" 
             :originalLanguage="serie.original_language" 
-            :vote="serie.vote_average"
+            :vote="Math.ceil(serie.vote_average / 2 )"
             :image="serie.poster_path">
         </Movie>
     </ul>
