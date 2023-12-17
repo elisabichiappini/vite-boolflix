@@ -49,5 +49,8 @@ export default {
     <AppFooter></AppFooter>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
+body {
+    background-color: rgb(94, 94, 94);
+}
 </style>
