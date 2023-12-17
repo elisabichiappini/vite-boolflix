@@ -18,7 +18,7 @@ export default {
 </script>
 
 <template>
-    <li>
+    <li class="card">
         <h3>{{ title }}</h3>
         <h2>{{ originalTitle }}</h2>
         <h3 v-if="originalLanguage === 'it'">
@@ -31,13 +31,17 @@ export default {
         <div class="vote">
             <img class="image-vote" v-for="n in vote" src="../assets/img/stella.png" alt="star_to_vote">
         </div>
-        <img v-if="image !== null" :src="`${this.store.apiPoster}${image}`" :alt="title">
+        <img class="image" v-if="image !== null" :src="`${this.store.apiPoster}${image}`" :alt="title">
         <span v-else>immagine non trovata</span>
     </li>
 </template>
 
 <style lang="scss" scoped>
-.image-vote {
+.card {
+    width: calc((100% - 80px) / 5);
+    .image-vote {
     width: 20px;
 }
+}
+
 </style>

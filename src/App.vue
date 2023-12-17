@@ -50,7 +50,4 @@ export default {
 </template>
 
 <style lang="scss">
-body {
-    background-color: rgb(94, 94, 94);
-}
 </style>

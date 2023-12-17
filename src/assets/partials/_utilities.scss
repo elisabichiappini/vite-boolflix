@@ -5,3 +5,24 @@ UTILITIES
 .d-flex{
     display: flex;
 }
+
+.align-center {
+    align-items: center;
+}
+
+.gap20 {
+    gap: 20px;
+}
+
+.justify-space-between {
+    justify-content: space-between;
+}
+
+.image {
+    width: 100%;
+    display: block;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
