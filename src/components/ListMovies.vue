@@ -1,15 +1,11 @@
 <script>
 import { store } from '../store';
+import Movie from './Movie.vue';
 export default {
     name: 'ListMoviesComponents',
-    props: {
-        title: String,
-        originalTitle: String,
-        language: String,
-        vote: Number,
-        name: String,
-        originalName: String,
-      },
+    components: {
+        Movie,
+    },
     data() {
         return {
             store,
@@ -20,28 +16,22 @@ export default {
 
 <template>
     <ul class="listMovies">
-        <li v-for="li in store.movies">
-            <h2>{{ li.title }}</h2>
-            <h2>{{ li.original_title }}</h2>
-            <h3 v-if="li.original_language === 'it'">
-                <img src="../assets/img/ita.png" alt="ita"></h3> 
-            <h3 v-else-if="li.original_language === 'en'">
-                <img src="../assets/img/en.png" alt=""></h3>
-            <h3 v-else >{{ li.original_language }}</h3>
-            <h3>{{ li.vote_average }}</h3>
-        </li>
+        <Movie 
+            v-for="movie in store.movies" 
+            :title="movie.title" 
+            :originalTitle="movie.original_title" 
+            :originalLanguage="movie.original_language" 
+            :vote="movie.vote_average">
+        </Movie>
     </ul>
     <ul class="listSeries">
-        <li v-for="li in store.series">
-            <h2>{{ li.name }}</h2>
-            <h2>{{ li.original_name }}</h2>
-            <h3 v-if="li.original_language === 'it'">
-                <img src="../assets/img/ita.png" alt="ita"></h3> 
-            <h3 v-else-if="li.original_language === 'en'">
-                <img src="../assets/img/en.png" alt=""></h3>
-            <h3 v-else >{{ li.original_language }}</h3>
-            <h3>{{ li.vote_average }}</h3>
-        </li>
+        <Movie 
+            v-for="serie in store.series" 
+            :title="serie.title" 
+            :originalTitle="serie.original_title" 
+            :originalLanguage="serie.original_language" 
+            :vote="serie.vote_average">
+        </Movie>
     </ul>
 </template>
 
