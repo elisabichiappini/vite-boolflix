@@ -4,7 +4,6 @@ export default {
     name: 'Main',
     components: {
         ListMovies,
-
     },
 };
 </script>

@@ -20,7 +20,7 @@ export default {
     methods: {
         callApiMovies() {
             axios
-            .get(this.store.apiUrlMovie,
+            .get(this.store.apiUrlMovie + this.store.apiUrlSeriesTv,
             {
                 params: {
                     query: this.store.searchKey,
@@ -28,7 +28,8 @@ export default {
             })
             .then((data) => {
             this.store.movies = data.data.results;
-            });
+            this.store.series = data.data.results;
+            })
         },
     },
     created() {
