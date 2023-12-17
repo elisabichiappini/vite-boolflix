@@ -28,12 +28,16 @@ export default {
             <img src="../assets/img/en.png" alt="">
         </h3>
         <h3 v-else >{{ originalLanguage }}</h3>
-        <h3 v-if="vote >= 1">{{ vote }}</h3>
-        <h3 v-else>0</h3>
+        <div class="vote">
+            <img class="image-vote" v-for="n in vote" src="../assets/img/stella.png" alt="star_to_vote">
+        </div>
         <img v-if="image !== null" :src="`${this.store.apiPoster}${image}`" :alt="title">
         <span v-else>immagine non trovata</span>
     </li>
 </template>
 
 <style lang="scss" scoped>
+.image-vote {
+    width: 20px;
+}
 </style>
