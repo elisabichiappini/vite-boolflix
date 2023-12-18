@@ -20,29 +20,18 @@ export default {
     methods: {
         //funzione per la chiamata alle due api, sia movies, sia seriestv.
         callApiTmdb() {
-            const movie = axios.get(this.store.apiUrlMovie,
-                {
-                params: {
-                    query: this.store.searchKey,
-                }}
-            )
-            const serieTv = axios.get(this.store.apiUrlSeriesTv,
-                {
-                params: {
-                    query: this.store.searchKey,
-                }
-            })
-            .then((data) => {
-                this.store.movies = data.data.results;
-                this.store.series = data.data.results;
-            })
+            const params = {query: this.store.searchKey};
+
+            const movie = axios.get(this.store.apiUrlMovie, {params})
+                .then((data) => {this.store.movies = data.data.results})
+            const serieTv = axios.get(this.store.apiUrlSeriesTv, {params})
+                .then((data) => {this.store.series = data.data.results})
+            },
         },
-    },
     //nel ciclo di vita created funzione di richiamo alla funzione di chiamata alle api, solo nel caso in cui è emesso emit dal figlio
     created() {
-        this.callApiTmdb();
-    }
-};
+        this.callApiTmdb()
+    }}
 </script>
 
 <template>

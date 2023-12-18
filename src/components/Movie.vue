@@ -23,6 +23,7 @@ export default {
     <li class="card">
         <h3>{{ title }}</h3>
         <h2>{{ originalTitle }}</h2>
+        <!--caso bandiere o prefisso lingua-->
         <h3 v-if="originalLanguage === 'it'">
             <img src="../assets/img/ita.png" alt="ita">
         </h3> 
