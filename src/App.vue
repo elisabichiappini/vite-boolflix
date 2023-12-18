@@ -18,6 +18,7 @@ export default {
         };
     },
     methods: {
+        //funzione per la chiamata alle due api, sia movies, sia seriestv.
         callApiTmdb() {
             const movie = axios.get(this.store.apiUrlMovie,
                 {
@@ -37,6 +38,7 @@ export default {
             })
         },
     },
+    //nel ciclo di vita created funzione di richiamo alla funzione di chiamata alle api, solo nel caso in cui è emesso emit dal figlio
     created() {
         this.callApiTmdb();
     }
@@ -44,9 +46,15 @@ export default {
 </script>
 
 <template>
-    <AppHeader @pippo="callApiTmdb"></AppHeader>
+    <!--header-->
+    <AppHeader @apicall="callApiTmdb"></AppHeader>
+    <!--/header-->
+    <!--main-->
     <AppMain></AppMain>
+    <!--/main-->
+    <!--footer-->
     <AppFooter></AppFooter>
+    <!--/footer-->
 </template>
 
 <style lang="scss">

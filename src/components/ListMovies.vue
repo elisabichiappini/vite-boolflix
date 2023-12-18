@@ -1,4 +1,5 @@
 <script>
+//importazione file global state e componenti
 import { store } from '../store';
 import Movie from './Movie.vue';
 export default {
@@ -15,26 +16,30 @@ export default {
 </script>
 
 <template>
-    <ul v-if="store.movies >= 1" class="listMovies d-flex flex-wrap gap20">
+    <!--list Movies e componente movie che cicla nell'array movies dello global state che si è generato dopo la ricerca-->
+    <ul class="listMovies d-flex flex-wrap gap20">
         <Movie 
             v-for="movie in store.movies" 
             :title="movie.title" 
             :originalTitle="movie.original_title" 
             :originalLanguage="movie.original_language" 
-            :vote="movie.vote_average"
+            :vote="Math.ceil(movie.vote_average / 2)"
             :image="movie.poster_path">
         </Movie>
     </ul>
-    <ul v-else class="listSeries d-flex flex-wrap gap20">
+    <!--/list Movies e componente movie che cicla nell'array movies dello global state che si è generato dopo la ricerca-->
+    <!--list Series e componente movie che cicla nell'array movies dello global state che si è generato dopo la ricerca-->
+    <ul class="listSeries d-flex flex-wrap gap20">
         <Movie 
             v-for="serie in store.series" 
-            :title="serie.name" 
-            :originalTitle="serie.original_name" 
+            :name="serie.name" 
+            :originalName="serie.original_name" 
             :originalLanguage="serie.original_language" 
             :vote="Math.ceil(serie.vote_average / 2 )"
             :image="serie.poster_path">
         </Movie>
     </ul>
+    <!--/list Series e componente movie che cicla nell'array movies dello global state che si è generato dopo la ricerca-->
 </template>
 
 <style lang="scss" scoped>

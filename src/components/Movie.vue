@@ -1,25 +1,30 @@
 <script>
+//importazione file global state
 import { store } from '../store';
 export default {
     name:'Movie',
     data() {
         return {
             store,
-        }
+        };
     },
     props: {
+        name: String,
         title: String,
+        originalName: String,
         originalTitle: String,
         originalLanguage: String,
         vote: Number,
         image: String,
-      },
+    },
 };
 </script>
 
 <template>
+    <!-- popolati gli elementi con le props -->
     <li class="card">
-        <h3>{{ title }}</h3>
+        <h3 v-if="movie">{{ title }}</h3>
+        <h3 v-else>{{ name }}</h3>
         <h2>{{ originalTitle }}</h2>
         <h3 v-if="originalLanguage === 'it'">
             <img src="../assets/img/ita.png" alt="ita">
