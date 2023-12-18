@@ -32,8 +32,8 @@ export default {
     <ul class="listSeries d-flex flex-wrap gap20">
         <Movie 
             v-for="serie in store.series" 
-            :name="serie.name" 
-            :originalName="serie.original_name" 
+            :title="serie.name" 
+            :originalTitle="serie.original_name" 
             :originalLanguage="serie.original_language" 
             :vote="Math.ceil(serie.vote_average / 2 )"
             :image="serie.poster_path">
