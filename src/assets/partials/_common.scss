@@ -3,7 +3,7 @@ COMMON
 ***************************/
 
 body {
-    background-color: rgb(135, 134, 134);
+    background-color: rgb(2, 2, 2);
     font-family: 'DM Sans', sans-serif;
     color: white;
 }
@@ -14,7 +14,7 @@ li {
 
 input {
     all: unset;
-    padding: 8px 16px;
+    padding: 4px 16px;
     background-color: white;
     width: 200px;
     color: black;
@@ -23,8 +23,13 @@ input {
 button {
     all: unset;
     background-color: rgb(244, 244, 244);
-    color: black;
+    color: rgb(17, 17, 17);
     padding: 0 16px;
-    border-left: 1px solid rgb(85, 84, 84);
+    border-left: 1px solid rgb(17, 17, 17);
     font-weight: 800;
+}
+
+a {
+    all: unset;
+    cursor: pointer;
 }

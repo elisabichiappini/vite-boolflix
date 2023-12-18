@@ -21,9 +21,10 @@ export default {
         //funzione per la chiamata alle due api, sia movies, sia seriestv.
         callApiTmdb() {
             const params = {query: this.store.searchKey};
-
+            //call to apiMovie
             const movie = axios.get(this.store.apiUrlMovie, {params})
                 .then((data) => {this.store.movies = data.data.results})
+            //call to apiSerietv
             const serieTv = axios.get(this.store.apiUrlSeriesTv, {params})
                 .then((data) => {this.store.series = data.data.results})
             },

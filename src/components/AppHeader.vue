@@ -17,13 +17,21 @@ export default {
     <header>
         <!--container-->
         <div class="container d-flex align-center gap20 justify-space-between">
-            <!--logo content-->
-            <div class="box-logo">
-                <img class="image" src="/public/boolflix_w.png" alt="logo">
+            <div class="header-left align-center d-flex gap20">
+                <!--logo content-->
+                <div class="box-logo">
+                    <img class="image" src="/public/boolflix_w.png" alt="logo">
+                </div>
+                <ul class="nav-bar d-flex gap20 align-center">
+                    <li class="link-nav-bar"><a href="#" target="_blank">Menu</a></li>
+                    <li class="link-nav-bar"><a href="#" target="_blank">Movies</a></li>
+                    <li class="link-nav-bar"><a href="#" target="_blank">Series Tv</a></li>
+                    <li class="link-nav-bar"><a href="#" target="_blank">About</a></li>
+                </ul>
+                <!--/logo content-->
             </div>
-            <!--/logo content-->
             <!--form content-->
-            <form @submit.prevent="$emit('apicall')">
+            <form>
                 <div class="d-flex">
                     <!--elemento input-->
                     <label for="search"></label>
@@ -35,6 +43,7 @@ export default {
                         placeholder="Search your movie..." />
                         <!--elemento button-->
                     <button
+                        @click.prevent="$emit('apicall')"
                         type="submit" 
                         name="searchSection">
                         Search
@@ -56,6 +65,17 @@ export default {
     padding: 0 40px;
     .box-logo {
         width: 140px;
+    }
+    .link-nav-bar {
+        line-height: 100px;
+        border-bottom: 2px inset transparent;
+        width: 100px;
+        text-align: center;
+        justify-content: center;
+        &:hover {
+           border-bottom: 2px inset rgb(255, 255, 255);      
+           font-weight: 800;
+        }
     }
 }
 </style>

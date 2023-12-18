@@ -21,7 +21,7 @@ export default {
 
 <style lang="scss" scoped>
 .container {
-    max-width: 1180px;
+    max-width: 1300px;
     margin: 0 auto;
 }
 </style>
