@@ -31,7 +31,7 @@ export default {
         },
     //nel ciclo di vita created funzione di richiamo alla funzione di chiamata alle api, solo nel caso in cui è emesso emit dal figlio
     created() {
-        this.callApiTmdb()
+        this.callApiTmdb();
     }}
 </script>
 

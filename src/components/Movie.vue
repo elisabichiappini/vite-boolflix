@@ -71,6 +71,7 @@ export default {
                 border: 2px inset white;
                 height: 100%;
                 object-fit: contain;
+                padding: 8px;
             }
         }
         .flip-card-back {
