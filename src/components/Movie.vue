@@ -6,6 +6,7 @@ export default {
     data() {
         return {
             store,
+            maxVote: 5,
         };
     },
     props: {
@@ -16,6 +17,14 @@ export default {
         image: String,
         overview: String,
     },
+    computed: {
+        emptyStars() {
+            return this.maxVote - this.myVote;
+        },
+        myVote() {
+            return Math.ceil(this.vote / 2);
+        }
+    }
 };
 </script>
 
@@ -31,7 +40,8 @@ export default {
                 <h3>{{ title }}</h3> 
                 <h2>{{ originalTitle }}</h2>
                 <div class="vote">
-                    <img class="image-vote" v-for="n in vote" src="../assets/img/stella.png" alt="star_to_vote">
+                    <img class="image-vote" v-for="n in myVote" src="../assets/img/stella-piena.svg" alt="star_to_vote">
+                    <img class="image-vote" v-for="n in emptyStars" src="../assets/img/stella-vuota.svg" alt="star_to_vote">
                 </div>
                 <p class="text-overview">{{ overview }}</p>
             </div>
@@ -42,6 +52,7 @@ export default {
 <style lang="scss" scoped>
 
 @use '../assets/partials/utilities';
+@use '../assets/partials/variables';
 // .card {
 //     width: calc((100% - 80px) / 5);
 //     .image-vote {
@@ -56,11 +67,10 @@ export default {
         position: relative;
         width: 100%;
         height: 100%;
-        text-align: center;
         transition: transform 0.4s;
         transform-style: preserve-3d;
         .flip-card-front {
-            background-color: #060606;
+            background-color: black;
             color: white;
             height: 100%;
             overflow: hidden;
@@ -75,7 +85,7 @@ export default {
             }
         }
         .flip-card-back {
-            background-color: #060606;
+            background-color: black;
             color: white;
             transform: rotateY(180deg);
             white-space: wrap;

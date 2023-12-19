@@ -24,7 +24,7 @@ export default {
             :title="movie.title" 
             :originalTitle="movie.original_title" 
             :originalLanguage="movie.original_language" 
-            :vote="Math.ceil(movie.vote_average / 2)"
+            :vote="Math.ceil(movie.vote_average)"
             :image="movie.poster_path"
             :overview="movie.overview">
         </Movie>
@@ -37,7 +37,7 @@ export default {
             :title="serie.name" 
             :originalTitle="serie.original_name" 
             :originalLanguage="serie.original_language" 
-            :vote="Math.ceil(serie.vote_average / 2 )"
+            :vote="Math.ceil(serie.vote_average)"
             :image="serie.poster_path"
             :overview="serie.overview">
         </Movie>
